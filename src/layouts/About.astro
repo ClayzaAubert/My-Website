@@ -1,0 +1,174 @@
+---
+import FindMe from "../components/FindMe.astro";
+import AboutInfo from "../components/AboutInfo.astro";
+import AboutResume from "../components/AboutResume.astro";
+import AboutSkill from "../components/AboutSkill.astro";
+import AboutSkillBar from "../components/AboutSkillBar.astro";
+import AboutFunFact from "../components/AboutFunFact.astro";
+
+var today = new Date();
+var birthDate = new Date("20 November 2003")
+var age = today.getFullYear() - birthDate.getFullYear();
+var m = today.getMonth() - birthDate.getMonth();
+if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+{
+    age--;
+}
+var currentAge = age + " Years old"
+---
+<section id="about" class="section">
+	<div class="homecolor-box"></div>
+	<div class="common_bg animate__animated animate__fadeInDown">
+		<div class="container">
+			<div class="about-content">
+				<!-- About Title -->
+				<div class="row">
+					<div class="col-12">
+						<div class="section-title animate__animated animate__fadeInDown animate__delay-1s">
+							<p class="common-desctiption">My Intro</p>
+							<h1 class="common-title">About <span>Me</span></h1>
+							<div class="animated-bar"></div>
+						</div>
+					</div>
+				</div>
+				<!-- About Me -->
+				<div class="row single-section">
+					<div class="col-lg-4 profile-photo animate__animated animate__fadeInLeft animate__delay-2s">
+						<div class="row">
+							<div class="col-12 d-block col-sm-none">
+								<img src="assets/images/1.webp" class="img-fluid main-img-mobile" alt="my picture" />
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-8 col-sm-12">
+						<div class="row personal-info animate__animated animate__fadeInRight animate__delay-2s">
+							<div class="col-12">
+								<h5 class="personal-title">WHO AM <span>I ?</span></h5>
+								<h3 class="personal-title">
+									I'm a <span>Discord Bot Developer</span>, <span> Whatsapp Bot Developer</span>, <span>Tools Developer</span> and <span>Web Scraping Developer</span>.
+								</h3>
+								<p class="info">
+									I'm currently learning about programming, especially in making bots and other projects.
+									The progamming languages that I often use for my projects are
+									<b>HTML, CSS, Javascript, python.</b> Coding is my Hobby and there are several project 
+									that i am currently eorking on, including Discord Bot, WhatsApp Bot, Extensions, scraping tools. 
+									Although most of the code is only personal.
+								</p>
+							</div>
+							<div class="row align-items-center">
+								<div class="col-lg-12">
+									<h3 class="personal-infotitle">
+										Some More <span>information</span>
+									</h3>
+								</div>
+								<div class="col-lg-6">
+									<ul class="about-you">
+										<AboutInfo title="Nickname 	:" value="Clayza Aubert"/>
+										<AboutInfo title="Currently	:" value="Exploring about AI"/>
+										<AboutInfo title="From 		:" value="Indonesia"/>
+										<AboutInfo title="Languages	:" value="English, Indonesia"/>
+									</ul>
+								</div>
+								<div class="col-lg-6">
+									<ul class="about-you">
+										<AboutInfo title="E-mail 	:" value=""><a href='mailto:clayzasc@gmail.com'>clayzasc@gmail.com</a></AboutInfo>
+										<AboutInfo title="Github 	:" value=""><a href='https://github.com/ClayzaAubert'>https://github.com/ClayzaAubert</a></AboutInfo>
+										<AboutInfo title="Age 		:" value={currentAge}/>
+										<AboutInfo title="Freelance	:" value="Available"/>
+									</ul>
+								</div>
+								<div class="col-lg-12">
+									<div class="About-btn">
+										<a target="_blank" href="https://clayzastore.blogspot.com">
+											<button style="margin: 4.5px; margin-left: 0;" class="clickbtn view-source">View Store <i class="fab fa-store" aria-hidden="true"></i></button>
+										</a>
+										<button style="margin: 4.5px; margin-left: 0;" class="clickbtn view-source" id="dl-button">Download PDF <i class="fa fa-download" aria-hidden="true"></i></button>
+										<!-- Social Media Icons-->
+										<div class="col-lg-7 col-sm-6 col-12">
+											<ul class="list-unstyled social-icons">
+												<FindMe/>
+											</ul>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Resume Section -->
+				<div class="resume-section">
+					<!-- Resume Title -->
+					<div class="row">
+						<div class="col-12">
+							<div class="section-title animate__animated animate__fadeInUp animate__delay-3s">
+								<p class="common-desctiption">Check out my Resume</p>
+								<h1 class="common-title">My <span>Resume</span></h1>
+								<div class="animated-bar"></div>
+							</div>
+						</div>
+					</div>
+					<!-- Resume Content -->
+					<div class="row">
+						<div class="projects">
+							<div class="row">
+								<h3 class="about-subtitle">Open-source Projects</h3>
+								<AboutResume title="Web-Tetris-Game" detail="3.5.0 (deprecated)" desc="Tetris web game (deskop mode)">
+									<a href="https://github.com/ClayzaAubert/Tetris" title="arknights-google on Github">View it on Github.</a>
+								</AboutResume>
+								<AboutResume title="Herta-KuruKuru~" detail="1.0.0" desc="Herta Kuru Kuru (I didn't make this, I just recode it)">
+									<a href="https://github.com/ClayzaAubert/Herta" title="arknights-google on Github">View it on Github.</a>
+								</AboutResume>
+								<AboutResume title="Database" detail="1.0.0" desc="This is the databse i use for activities in my bot, feel free to use it however you like.">
+									<a href="https://github.com/ClayzaAubert/Database" title="arknights-google on Github">View the Source code in Github here!</a>
+								</AboutResume>
+								<AboutResume title="Youtube-Music-Discord-Bot" detail="4.5.1" desc="This discord bot uses youtube api so it can access all content on youtube in the of sound, not just music">
+									<a href="https://github.com/ClayzaAubert/Youtube-Music-Discord-Bot" title="arknights-google on Github">Github link to the bot.</a>
+								</AboutResume>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Skill Bar Section -->
+				<div class="skill-section">
+					<div class="row">
+						<div class="col-12">
+							<div class="section-title animate__animated animate__fadeInUp animate__delay-3s">
+								<p class="common-desctiption">My levels of knowledge</p>
+								<h1 class="common-title">My <span>Skills</span></h1>
+								<div class="animated-bar"></div>
+							</div>
+						</div>
+						<AboutSkill title="">
+							<AboutSkillBar title="CSS" percent="30%"></AboutSkillBar>
+							<AboutSkillBar title="HTML" percent="30%"></AboutSkillBar>
+							<AboutSkillBar title="Javascript" percent="30%"></AboutSkillBar>
+							<AboutSkillBar title="Typescript" percent="30%"></AboutSkillBar>
+						</AboutSkill>
+						<AboutSkill title="">
+							<AboutSkillBar title="C#" percent="30%" addClass="CSharp"></AboutSkillBar>
+							<AboutSkillBar title="Python" percent="30%"></AboutSkillBar>
+							<AboutSkillBar title="Go" percent="30%"></AboutSkillBar>
+							<AboutSkillBar title="PHP"	percent="30%"></AboutSkillBar>
+						</AboutSkill>
+					</div>
+				</div>
+				<!-- Fun Fact Section -->
+				<div class="funfacts-section">
+					<div class="row">
+						<div class="col-12">
+							<div class="section-title">
+								<p class="common-desctiption">Some Fun Facts</p>
+								<h1 class="common-title">Fun <span>Facts</span></h1>
+								<div class="animated-bar"></div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<AboutFunFact value="2" time="10000" text="Years Of "><span>Experience</span></AboutFunFact>
+						<AboutFunFact value="14" time="1500" text="Completed Projects"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>

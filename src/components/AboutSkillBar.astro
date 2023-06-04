@@ -1,0 +1,45 @@
+---
+export interface Props {
+	title: string;
+	percent: string;
+    addClass?: string;
+}
+
+const { title, percent, addClass } = Astro.props;
+---
+
+<div class="bar">
+	<div class="info">
+		<span>{title}</span>
+	</div>
+	<div class={`progress-line ${title} ${addClass}`}>
+		<span style={`width: ${percent}`}></span>
+	</div>
+</div>
+
+<style>
+	.progress-line.CSS span::after {
+		content: "30%";
+	}
+	.progress-line.HTML span::after {
+		content: "30%";
+	}
+	.progress-line.Javascript span::after {
+		content: "30%";
+	}
+	.progress-line.Typescript span::after {
+		content: "30%";
+	}
+	.progress-line.CSharp span::after {
+		content: "30%";
+	}
+	.progress-line.Python span::after {
+		content: "30%";
+	}
+	.progress-line.Go span::after {
+		content: "30%";
+	}
+	.progress-line.PHP span::after {
+		content: "30%";
+	}
+</style>
